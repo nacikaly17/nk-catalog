@@ -1,0 +1,4 @@
+# need to ship extra directories (e.g. static or templates)
+recursive-include ./templates *
+recursive-include ./static *
+recursive-include ./db *

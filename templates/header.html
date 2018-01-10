@@ -1,0 +1,21 @@
+<div class="row top-menu">
+	<div class="col-md-6">
+		<a href="{{url_for('showCatalog')}}">
+			<span class="glyphicon glyphicon-home" aria-hidden="true"></span>Show Catalog
+		</a>
+	</div>
+	<div class="col-md-6 text-right">
+		<div class="col-md-2">
+			{% if not loginUser %}	
+				<a href="{{url_for('showLogin')}}">Login </a>
+			{% else %}	
+				<a href="{{url_for('logout')}}">Welcome {{ loginUser.username}} : Logout </a>
+			{% endif %}	
+		</div>
+		<div class="col-md-2">
+			{% if not loginUser %}	
+				<a href="{{url_for('signup')}}">Signup</a>
+			{% endif %}	
+		</div>
+	</div>
+</div>

@@ -1,0 +1,28 @@
+{% extends "main.html" %}
+{% block content %}
+{% include "header.html" %}
+	<div class="row divider green">
+		<div class="col-md-12" align="center" >Delete</div>
+	</div>
+	<div class="row banner main">
+		<div class="col-md-11 col-md-offset-1 padding-none">
+			<h1 align="center">Item
+			<figure class="creator">
+				{% if loginUser %}
+					{% if loginUser.picture != '' %}
+						<img src="{{ loginUser.picture}}">
+					{% else %}
+				    	<img src="{{ url_for('static', filename='blank_user.gif') }}">
+					{% endif %}
+					<p>created by {{ loginUser.username}}</p>
+				{% endif %}
+			</figure>
+			</h1>
+		</div>
+	</div>
+	<h2> Are you sure you want to delete "{{item.title}}" ? </h2>
+	<form action="#" method = 'post'>
+		<button type="submit" class="btn btn-default delete" id="submit" type="submit">
+		<span class="glyphicon glyphicon-trash" aria-hidden="true"></span>Delete</button>
+	</form>
+{% endblock %}
